@@ -1,66 +1,91 @@
-
 body {
-    margin: 0;
+    background: linear-gradient(135deg, #232526, #414345);
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: hsl(0, 0%, 95%);
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 #calculator {
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 15%);
-    border-radius: 15px;
-    max-width: 500px;
-    overflow: hidden;    
+    background: #222831;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 340px;
 }
 
 #display {
     width: 100%;
-    padding:20px;
-    font-size: 5rem;
-    text-align: left;
-    background-color: hsl(0, 0%, 20%);
-    color: white;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    background: #393e46;
+    color: #fff;
+    font-size: 2rem;
+    text-align: right;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    outline: none;
+    letter-spacing: 2px;
 }
 
-#keys{
+#display::placeholder {
+    color: #bdbdbd;
+    opacity: 1;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+#keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 45px;
-
+    gap: 1rem;
 }
 
-button{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+button {
+    padding: 1rem;
+    font-size: 1.3rem;
     border: none;
-    background-color: hsl(0, 0%, 30%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
+    border-radius: 12px;
+    background: #393e46;
+    color: #fff;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: hsl(0, 0%, 40%);
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 button:active {
-    background-color: hsl(0, 0%, 50%);
+    transform: scale(0.97);
 }
 
 .operator-btn {
-    background-color: hsl(35, 100%, 55%);
+    background: #00adb5;
+    color: #fff;
 }
 
-.operator-btn:hover {
-    background-color: hsl(35, 100%, 65%);
+.equals-btn {
+    background: #f96d00;
+    color: #fff;
+    grid-column: span 1;
 }
 
-.operator-btn:active {
-    background-color: hsl(35, 100%, 75%);
+button:hover {
+    background: #222831;
 }
+
+@media (max-width: 400px) {
+    #calculator {
+        width: 95vw;
+        padding: 1rem 0.5rem;
+    }
+    #display {
+        font-size: 1.2rem;
+        height: 40px;
+    }
+    button {
+        font-size: 1rem;
+        padding: 0.7rem;  
+    }
+}              
